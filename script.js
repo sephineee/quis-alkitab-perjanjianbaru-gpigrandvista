@@ -3,7 +3,7 @@ var namaPeserta, golonganPeserta, tokenPeserta, detailJawaban = [];
 var startScreen = document.getElementById('start-screen'), countdownScreen = document.getElementById('countdown-screen'), quizScreen = document.getElementById('quiz-screen'), resultScreen = document.getElementById('result-screen');
 var btnStart = document.getElementById('btn-start'), btnNext = document.getElementById('btn-next'), timerDisplay = document.getElementById('timer-display');
 var bgmAudio = document.getElementById('bgm');
-var videoIbadah = document.getElementById('video-ibadah');
+// var videoIbadah = document.getElementById('video-ibadah'); (Hapus atau beri komentar)
 var audioCtx = null;
 
 document.getElementById('btn-music').onclick = function() {
