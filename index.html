@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Jemaat - GPI Sidang Grandvista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BACKGROUND VIDEO -->
+    <div class="video-background">
+        <video id="video-ibadah" autoplay loop muted playsinline>
+            <source src="assets/video-ibadah.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- AUDIO LAGU -->
+    <audio id="bgm" src="assets/lagu-rohani.mp3" loop></audio>
+
+    <div class="container">
+        <!-- LAYAR 1: LOGIN -->
+        <div id="start-screen" class="screen active">
+            <div class="header-logo">
+                <h2>GPI SIDANG GRANDVISTA</h2>
+                <span class="location">CIKARANG</span>
+            </div>
+            <div class="divider"></div>
+            
+            <button id="btn-music" class="btn-music">🔊 Nyalakan Musik</button>
+
+            <h1 class="title">Kuis Pemahaman<br>Firman Tuhan</h1>
+            <h3 class="sub-materi">Materi: Perjanjian Baru</h3>
+            
+            <p class="desc">Silakan isi data diri dan Token. Waktu: <b>15 Menit</b>.</p>
+            
+            <div class="input-group">
+                <input type="text" id="input-nama" placeholder="Nama Lengkap" required>
+                <input type="text" id="input-golongan" placeholder="Golongan Kaum" required>
+                <input type="text" id="input-token" placeholder="Token Kuis" required>
+            </div>
+            
+            <button id="btn-start" class="btn btn-primary">Mulai Kuis</button>
+        </div>
+
+        <!-- LAYAR 2: COUNTDOWN -->
+        <div id="countdown-screen" class="screen">
+            <h2 class="countdown-text">Are You Ready?</h2>
+            <div id="countdown-number" class="countdown-number">5</div>
+            <p class="countdown-sub">Kerjakan dengan Sukacita ya!</p>
+        </div>
+
+        <!-- LAYAR 3: QUIZ -->
+        <div id="quiz-screen" class="screen">
+            <div class="header-quiz">
+                <span id="peserta-info" class="badge">Peserta: -</span>
+                <span id="timer-display" class="badge" style="color: #EF4444;">15:00</span>
+            </div>
+            <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+            <h3 id="question-text" class="question">Memuat soal...</h3>
+            <div id="options-container" class="options"></div>
+            <button id="btn-next" class="btn btn-success" style="display: none;">Soal Berikutnya</button>
+        </div>
+
+        <!-- LAYAR 4: HASIL -->
+        <div id="result-screen" class="screen">
+            <h2 class="title-result">Kuis Selesai</h2>
+            <div class="ayat-box">
+                <p class="ayat-text">"Firman-Mu itu pelita bagi kakiku dan terang bagi jalanku."</p>
+                <p class="ayat-ref">Mazmur 119:105 TB</p>
+            </div>
+            <div class="result-card">
+                <h3 id="res-nama">Nama</h3>
+                <p id="res-golongan">Golongan</p>
+                <div class="divider-small"></div>
+                <div class="score-grid">
+                    <div><p class="label">Benar</p><h3 id="res-benar" class="text-green">0</h3></div>
+                    <div><p class="label">Salah</p><h3 id="res-salah" class="text-red">0</h3></div>
+                    <div><p class="label">Nilai</p><h3 id="res-nilai" class="highlight">0</h3></div>
+                </div>
+            </div>
+            <p id="res-pesan" class="pesan"></p>
+            <p style="color: #A0AEC0; font-size: 0.8rem; margin-top: 15px;">Jawaban telah terkirim ke Panitia.</p>
+        </div>
+    </div>
+
+    <!-- LIBRARY & SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- PENTING: data.js HARUS DI ATAS script.js -->
+    <script src="data.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
